@@ -2,7 +2,9 @@
 
 This is a scraper and collector of semi open data provided by the Ontario Finance Ministry.
 
-Once data is standardized into Row objects (see row.py), each row is pushed to a Flask app on AWS.
+Once data is standardized into Row objects (see row.py), each row is pushed to a sqlite3 database.
+
+A [microservice](https://github.com/openciti/sunshinemicroservice) will use the data to serve web pages and a twitter bot
 
 ## data sources
 
