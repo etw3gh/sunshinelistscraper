@@ -28,14 +28,21 @@ class Row:
     else:
       linesplit = self.split_on_multiple_spaces(line.replace('$', '  $'))
     lens = len(linesplit)
-    
+
+    S = headers.school    
+    L = headers.last
+    F = headers.first
+    T = headers.title
+    SA = headers.salary
+    TX = headers.taxable
+    END = len(line)
     if headers is not None:
-      self.school = line[headers.school:headers.last].strip()
-      self.last = line[headers.last:headers:first].strip()
-      self.first = line[headers.first:headers.title].strip()
-      self.title = line[headers.title:headers.salary].strip()
-      self.salary = line[headers.salary:headers.taxable].strip()
-      self.taxable = line[headers.taxable:len(line)].strip()       
+      self.school = line[S:L].strip()
+      self.last = line[L:F].strip()
+      self.first = line[F:T].strip()
+      self.title = line[T:SA].strip()
+      self.salary = line[SA:TX].strip()
+      self.taxable = line[TX:END].strip()       
     elif self.year == '1996' and lens == 7:
       skipuni, s, ln, fn, t, sal, tax = linesplit
       self.clean_all(ln, fn, sal, tax, s, t)

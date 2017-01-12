@@ -132,7 +132,6 @@ class Ripper:
 
         if '$' not in line:
           continue
-        print (line)
         r = Row(year)
         r.html(line, headers)
         print(str(r))
