@@ -5,7 +5,7 @@ from csv import reader
 from headerpos import HeaderPos
 
 class Ripper:
-  def __init__(self, urlsfile, ripsfolder, forcedownload):
+  def __init__(self, urlsfile, ripsfolder, forcedownload, serviceUrl):
     self.url_file = urlsfile 
     self.html = '.html'
     self.csv = '.csv'
@@ -13,6 +13,8 @@ class Ripper:
     self.php = 'php'
     self.rips = ripsfolder
     self.force_download = forcedownload
+    self.push_url = serviceUrl
+
     # unfortunately the CSVs for 2015/2014 include all sectors so we grep for Universities only
     # the CSVs for these years are also formatted differently so 2 expressions are req'd
     self.csvGrep = " | grep -e '^\"Universities'  -e '^Universities' "
@@ -121,8 +123,8 @@ class Ripper:
         
         r = Row(year)
         r.csv(noquotes)
-        
-        print (str(r))
+        r.push(self.push_url)
+        #print (str(r))
 
   def process_html(self, htmlfile, year, headers=None):
     with open(htmlfile) as hfile:
@@ -134,7 +136,8 @@ class Ripper:
           continue
         r = Row(year)
         r.html(line, headers)
-        print(str(r))
+        r.push(self.push_url)
+        #print(str(r))
 
   def exists(self, fullpath):
     return os.path.isfile(fullpath)
@@ -144,10 +147,11 @@ if __name__== "__main__":
     fd = True
   else:
     fd = False
-  r = Ripper('urls_html.txt', 'rips', fd)
+  url = "http://openciti.ca/cgi-bin/mp/add?"
+  r = Ripper('urls_html.txt', 'rips', fd, url)
   r.rip()
-  r = Ripper('urls_php.txt', 'rips', fd)
+  r = Ripper('urls_php.txt', 'rips', fd, url)
   r.rip()
-  r = Ripper('urls_csv.txt', 'rips', fd)
+  r = Ripper('urls_csv.txt', 'rips', fd, url)
   r.rip()    
 
