@@ -39,7 +39,9 @@ r.rip()
 a text file with a list of urls and years:
 
 >urls_csv.txt
+
 >urls_html.txt
+
 >urls_php.txt
 
 for years covered in a single url:
