@@ -28,10 +28,11 @@ right now the main method of ripper.py (line 145)
 
 you need a block of code like this for each urls file
 
-`r = Ripper(urlslist, ripsfolder, force-download, serviceurl)
+```
+r = Ripper(urlslist, ripsfolder, force-download, serviceurl)
 
 r.rip()
-`
+```
 
 ###urlslist
 
