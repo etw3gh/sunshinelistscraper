@@ -46,11 +46,14 @@ a text file with a list of urls and years:
 
 for years covered in a single url:
 
-```2020 https://on.gov/2020_salaries.html```
+```
+2020 https://on.gov/2020_salaries.html
+```
 
 for years with multiple urls:
 
-```2030_0 https://on.gov/2030_salaries_a.html
+```
+2030_0 https://on.gov/2030_salaries_a.html
 
 2030_1 https://on.gov/2030_salaries_b.html
 ```
