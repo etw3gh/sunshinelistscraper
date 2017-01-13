@@ -60,7 +60,7 @@ for years with multiple urls:
 
 ### ripsfolder
 
-full path for where you want the downloaded data and process text files to reside.
+full path for where you want the downloaded data and processed text files to reside.
 
 it will be created for you
 
