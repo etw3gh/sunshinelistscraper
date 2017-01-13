@@ -36,7 +36,9 @@ r.rip()
 
 ###urlslist
 
-a text file with a list of urls and years:
+a text file with a list of urls and years
+
+I have them separated by type (html, php and csv) but this is not necessary
 
 >urls_csv.txt
 
