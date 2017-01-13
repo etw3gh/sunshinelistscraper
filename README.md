@@ -4,7 +4,7 @@ This is a scraper and collector of semi open data provided by the Ontario Financ
 
 Once data is standardized into Row objects (see row.py), each row is pushed to a sqlite3 database.
 
-A [microservice](https://github.com/openciti/sunshinemicroservice) will use the data to serve web pages and a [twitter bot](https://twitter.com/MyProfMakes)
+A [microservice](https://github.com/openciti/sunshinemicroservice) will use the data to serve web pages and an interactive [twitter](https://github.com/openciti/sunshinelistbot) [bot](https://twitter.com/MyProfMakes) will serve the data over twitter
 
 ## data sources
 
